@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth; /*yumuşak geçişler*/
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+    /*satır yüksekliği*/
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+img {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    /*yan yana geldi*/
+    align-items: center;
+    justify-content: space-between;
+    background: var(--dark);
+    opacity: 0.8;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0 3rem;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 1rem 2rem;
+    margin: 0 .5rem;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid var(--warning);
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar .brand {
+    font-weight: 400;
+
+}
+
+.navbar h1 {
+    font-size: 3rem;
+}
+
+.navbar span {
+    color: var(--warning);
+}
+
+/* header */
+
+.main-header {
+    animation: changeBackground 15s infinite;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+.main-header.blog{
+    background-image: url("../img/bg-2.jpeg");
+    height: 50vh;
+    animation: none;
+}
+
+/*???????????????????????????????????????????????????????????????*/
+.icon-container.blog-container{
+    top: 0;
+}
+/*???????????????????????????????????????????????????????????????*/
+@keyframes changeBackground {
+    0% {
+        background-image: url("../img/horoz2.png");
+    }
+
+    33% {
+        background-image: url("../img/horoz.jpg");
+    }
+
+    66% {
+        background-image: url("../img/horoz8.webp");
+    }
+
+    100%{
+        background-image: url("../img/horoz4.jpg")
+    }
+}
+
+.icon-container {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: #ff0000;
+    animation: move 5s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-50%, -50%) translateX(-300px);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateX(300px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(0);
+    }
+}
+
+.main-header .content {
+    display: flex;
+    flex-direction: column;
+    /*alt alta geldi*/
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.main-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.main-header.blog::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.main-header * {
+    z-index: 5;
+}
+
+.main-header .content h1 {
+    font-size: 5.5rem;
+}
+
+.main-header .content p {
+    font-size: 2.4rem;
+    max-width: 60rem;
+    margin: 2rem 0 3rem;
+}
+
+.blogbaslik{
+    position: absolute;
+    top: 75%;
+}
+
+/* icons */
+
+.icons{
+    padding: 30px;
+}
+
+.icons h3{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.icons i{
+    background-color: var(--primary);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+/*about*/
+.about{
+    color: #fff;
+}
+
+.about h2{
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.about p{
+    margin: 2rem 0;
+}
+
+/* gallery */
+
+.gallery img:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* cards */
+.ard{
+    color: #fff;
+    font-weight: 700;
+}
+
+.card-body{
+    padding: 2rem;
+}
+
+/* teams */
+.teams img{
+    border-radius: 0 54px;
+}
+
+.teams .me{
+    width: 77%;
+}
+
+.teams img:hover{
+    opacity: 0.8;
+}
+
+/* contact */
+.contact-form{
+    width: 100%;
+    padding: 2rem 0 ;
+}
+
+.contact-form label{
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.contact-form .form-control{
+    margin-bottom: 1.5rem;
+
+}
+
+.contact-form input{
+    width: 100%;
+    padding: .5rem;
+    height: 40px;
+    border: 1px solid #f5f5f5;
+}
+
+.contact-form .btn{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.contact h2{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+/* article */
+.articles{
+    padding: 3rem 5rem;
+}
+
+.article{
+    margin-top: 1rem;
+    color: #fff;
+}
+
+/* footer */
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+}
+
+.footer a .ytb:hover{
+    color: var(--danger);
+}
+
+.footer a .face:hover{
+    color: var(--primary);
+}
+
+.footer a .lnk:hover{
+    color: var(--primary);
+}
+
+.footer a .twt:hover{
+    color: var(--primary);
+}
+
+.footer a :hover{
+    opacity: 0.7;
+}
+
+.footer .social a{
+    margin-right: 1rem;
+}
+
+
+/* mobile */
+@media(max-width:768px){
+    html{
+        font-size: 9px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        height: 120px;
+        padding: 20px;
+    }
+
+    .navbar a{
+        padding: 10px;
+        margin: 0 3px;
+    }
+
+    .teams img{
+        width: 70%;
+    }
+    .teams .me{
+        width: 70%;
+    }
+
+    .icon-container{
+        top: 29%;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translate(-50%, -50%) translateX(-100px);
+        }
+        50% {
+            transform: translate(-50%, -50%) translateX(120px);
+        }
+        100% {
+            transform: translate(-50%, -50%) translateX(0);
+        }
+    }
+}
